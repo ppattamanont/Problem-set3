@@ -8,7 +8,7 @@ pb3.max()
 # Question3
 
 # Question4
-pb3['Date Time'].str.split(' ', 1, expand = True) ---> I use this code to separate ‘Date’ and ‘Time’
+pb3['Date Time'].str.split(' ', 1, expand = True)  #I use this code to separate ‘Date’ and ‘Time’
 pb3_new = pd.concat([pb3['Date Time'].str.split(' ', 1, expand = True),pb3[[' Water Level']]], axis = 1, ignore_index = True)
 x = pb3_new[[1]]
 y = pb3_new[[2]]
