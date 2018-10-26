@@ -13,14 +13,10 @@ pb3 = pandas.read_csv('file.pb3.csv')
 pb3.max()
 
 # Question3
-Myrange = pb3.iloc[:,1]
-lst = []
-cols = [“Water"]
-for a in range(pb3[[1]]): // for a in range(len(myrange)):
-     lst.append([a])
-     df = pd.DataFrame(lst, columns=cols, index=range(725))
-     df
-     ##This code doesn't work
+pb3_water = pb3.iloc[:,1]
+pb3_diff = pb3_water.diff()
+pb3_diff.max()
+
 
 # Question4
 pb3['Date Time'].str.split(' ', 1, expand = True)  #I use this code to separate ‘Date’ and ‘Time’
