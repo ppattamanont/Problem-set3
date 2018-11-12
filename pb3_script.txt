@@ -8,15 +8,38 @@
  WaterLavel_list.append(WaterLevel)
  max(WaterLavel_list)
 
+ 
+ 
+ # MAG: This was close, you had the parts, but just needed to move things around a bit.
+ #    Here's my version of your script that seems to work.
+ 
+pb3 = open("Class_Files/data/CO-OPS__8729108__wl.csv") # Or file.pb3.csv if you have a copy of that.
+WaterLevel_list = []
+
+for line in pb3.readlines():
+    WaterLevel = line.split(",")[1]
+    #print(WaterLevel)
+    WaterLevel_list.append(WaterLevel)
+max(WaterLevel_list)
+
+# 2 out of 4 points
+ 
+ 
 # Question2
 pb3 = pandas.read_csv('file.pb3.csv')
 pb3.max()
+
+# MAG: his works, but mostly by chance. If there were larger numbers in any other column, you'd get the wrong answer.
+# 3.5 out of 4 points.
 
 # Question3
 pb3_water = pb3.iloc[:,1]
 pb3_diff = pb3_water.diff()
 pb3_diff.max()
 
+
+# MAG: OK
+# 4 out of 4 points
 
 # Question4
 pb3['Date Time'].str.split(' ', 1, expand = True)  #I use this code to separate ‘Date’ and ‘Time’
@@ -27,3 +50,10 @@ import matplotlib.pyplot as plt
 fig = plt.figure()
 plt.plot(x[1],y[2])
 fig.savefig('my_figure.png')
+
+# MAG: OK 
+# 4 out of 4 points
+
+# MAG: Q5: Undergrad 4/4
+
+# MAG: Total: 17.5/20 points.
